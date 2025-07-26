@@ -8,7 +8,8 @@ export default function Contact() {
   const [showImageFirst, setShowImageFirst] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowImageFirst(false), 3000); // show image for 3 seconds
+    const timeout = window.innerWidth < 768 ? 1500 : 3000; // reduced time for mobile
+    const timer = setTimeout(() => setShowImageFirst(false), timeout);
     return () => clearTimeout(timer);
   }, []);
 
@@ -42,32 +43,12 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center justify-center bg-cover bg-center w-full min-h-[calc(100vh-10rem)] px-4 pt-4 md:pt-10 gap-20 md:gap-10 ">
       <AnimatePresence>
-        {showImageFirst && window.innerWidth < 768 ? (
-                    <motion.div
-            key="imageOnly"
-            initial={{ opacity: 0, y: -50, scale: 0.5 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.6 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-            className="flex justify-center"
-          >
-            <motion.img
-              src="contact-us.png"
-              alt="Contact Us"
-              className="max-w-[200px] h-auto object-contain"
-              initial={{ rotate: -5 }}
-              animate={{ rotate: 5 }}
-              exit={{ rotate: -5 }}
-              transition={{ duration: 1, repeat: 2, repeatType: "reverse" }}
-            />
-          </motion.div>
-        ) : (
-          <>
+        <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col md:flex-row items-start justify-center gap-8 w-11/12 md:w-4/5  "
+              className="flex flex-col md:flex-row items-start justify-center gap-6 md:gap-8 w-full px-2 sm:px-4 md:w-4/5"
             >
               {/* Contact Info Box */}
               <div className="flex-1 w-full max-w-xl p-8 rounded-2xl shadow-xl backdrop-blur-md bg-white/30 border border-white/40">
@@ -174,7 +155,6 @@ export default function Contact() {
               </form>
             </motion.div>
           </>
-        )}
       </AnimatePresence>
 
       {showPopup && (
