@@ -11,7 +11,7 @@ export default function Navbar() {
     `pb-1 border-b-2 transition-all duration-200 ${
       location.pathname === path
         ? "text-white border-white"
-        : "text-white border-transparent hover:border-white hover:text-teal-300"
+        : "text-white border-transparent hover:border-teal-300 hover:text-teal-300"
     }`;
 
   const mobileLinkClasses = (path) =>
@@ -91,7 +91,7 @@ export default function Navbar() {
             <Link
               to="/"
               onClick={toggleMenu}
-              className={mobileLinkClasses("/")}
+              
             >
             </Link>
             <Link
