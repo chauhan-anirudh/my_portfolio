@@ -23,9 +23,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gradient-to-r from-gray-900 to-teal-400 shadow-md sticky top-0 z-50 w-full overflow-hidden">
+      <nav className="bg-gradient-to-r from-gray-900 to-teal-400 shadow-md sticky top-0  z-50 w-full overflow-hidden">
         <div className="w-full max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo */}
           <h1 className="text-2xl font-bold text-white">Portfolio</h1>
 
           {/* Desktop Links */}
@@ -74,7 +73,7 @@ export default function Navbar() {
 
         {/* Side Drawer */}
         <div
-          className={`absolute top-0 right-0 h-full w-72 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+          className={`absolute top-0 right-0 h-full w-55 bg-sky-100 shadow-xl transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -94,7 +93,6 @@ export default function Navbar() {
               onClick={toggleMenu}
               className={mobileLinkClasses("/")}
             >
-              Home
             </Link>
             <Link
               to="/about"
