@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 
-const languages = ["Python", "C++", "HTML", "CSS", "JavaScript", "Node.Js"];
-const framework_library = ["React.js", "Tailwind CSS"];
-const DataBse_Tools = ["MongoDB", "SQL", "Git", "VS Code"];
+const languages = ["Python", "C++", "HTML", "CSS", "JavaScript", "Node.js"];
+const framework_library = ["React.js", "Tailwind CSS","Express.js"];
+const DataBse_Tools = ["Git", "VS Code", "POSTMAN"];
+const DataBase_API = ["MongoDB", "Rest API", "GraphQL API"];
 
 export default function Skills() {
   return (
@@ -18,8 +19,8 @@ export default function Skills() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
-        {/* Languages */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+        
         <div className="flex flex-col gap-4 items-center">
           <p className="text-2xl text-emerald-700 font-semibold">Languages</p>
           {languages.map((lang) => (
@@ -32,9 +33,9 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Framework / Library */}
+        
         <div className="flex flex-col gap-4 items-center">
-          <p className="text-2xl text-emerald-700 font-semibold">Framework/Library</p>
+          <p className="text-2xl text-emerald-700 font-semibold">Framework / Library</p>
           {framework_library.map((item) => (
             <div
               key={item}
@@ -45,9 +46,20 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Database / Tools */}
         <div className="flex flex-col gap-4 items-center">
-          <p className="text-2xl text-emerald-700 font-semibold">Database/Tools</p>
+          <p className="text-2xl text-emerald-700 font-semibold">DataBase / APIs</p>
+          {DataBase_API.map((tool) => (
+            <div
+              key={tool}
+              className="px-6 py-2 text-center text-sm sm:text-base text-black bg-white hover:bg-sky-400 rounded-full shadow-md transition"
+            >
+              {tool}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-4 items-center">
+          <p className="text-2xl text-emerald-700 font-semibold">Tools</p>
           {DataBse_Tools.map((tool) => (
             <div
               key={tool}
@@ -57,6 +69,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
+        
       </div>
     </motion.div>
   );

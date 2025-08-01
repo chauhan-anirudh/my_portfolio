@@ -34,7 +34,7 @@ export default function About() {
             </p>
 
             <a
-              href="/resume.pdf"
+              href="/Anirudh-resume.pdf"
               download
               className="flex items-center gap-2 text-indigo-500 hover:text-red-800 border-b-2 border-transparent hover:border-red transition-all duration-200 w-fit"
             >
